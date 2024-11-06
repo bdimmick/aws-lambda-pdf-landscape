@@ -21,7 +21,7 @@ def lambda_handler(event, context):
             reader = PdfReader(tmp_in)
             writer = PdfWriter()
             for page in reader.pages:
-                if page.mediaBox.bottom - page.mediaBox.top > page.mediaBox.right - page.mediaBox.left:
+                if page.mediabox.bottom - page.mediabox.top > page.mediabox.right - page.mediabox.left:
                     page.rotate(90)
                 writer.add_page(page)
             writer.write(tmp_out)
